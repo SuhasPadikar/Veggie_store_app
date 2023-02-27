@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VeggieStore</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="stylesheets/css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="stylesheets/css/responsive.css">  
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="stylesheets/css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  
+  <body>
+  <body class="main-layout">
+ 
+  
+  
+  <!-- header -->
+  <header>
+    <!-- header inner -->
+    <div class="header-top">
+      <div class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="index.html"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">
+          <p class="navbar-text float-right">
+</p>
+               <div class="menu-area">
+                <div class="limit-box">
+                  <nav class="main-menu ">
+                    <ul class="menu-area-main">
+                      <li class="active"> <a href="index.html">Home</a> </li>
+                      <li> <a href="#about">About</a> </li>
+                      <% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |<%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
+<% end %>
+<li class="tm-nav-li"><a href="/admin/logout" class="tm-nav-link">Logout</a></li>
+
+  <% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
+ <% if alert %>
+ <p class="alert alert-danger"><%= alert %></p>
+  <% end %>  
+                     <li> <a href="#"><%= image_tag image_url('icon_b.png')%></a></li>
+                     </ul>
+                   </nav>
+                 </div>
+               </div> 
+              </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- end header inner -->
+
+     <!-- end header -->
+     <section class="slider_section">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                     <span>Welcome To VEGGIES!!</span>
+                      <h1>Vegetables Shop</h1>
+                      <p>It is a E-commerce website established to get Fresh Vegetables Delivered to there Door Step!!</p>
+                      <form class="Vegetable">
+                <input class="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable">
+                <button class="Search_btn">Search</button>
+              </form>
+                      <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="assets_box">
+                      <figure><%= image_tag image_url('img2.png')%></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption">
+
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                      <span>Welcome To Shree</span>
+                      <h1>Vegetables Shop</h1>
+                      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
+                      <form class="Vegetable">
+                <input class="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable">
+                <button class="Search_btn">Search</button>
+              </form>
+                      <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="assets_box">
+                      <figure><%= image_tag image_url('img2.png')%></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-item">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption ">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                      <span>Welcome To Shree</span>
+                      <h1>Vegetables Shop</h1>
+                      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal </p>
+                       <form class="Vegetable">
+                <input class="Vegetable_fom" placeholder="Vegetable" type="text" name=" Vegetable">
+                <button class="Search_btn">Search</button>
+              </form>
+                      <a href="#">Contact Us</a> <a href="#">Vegetable</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="assets_box">
+                      <figure><%= image_tag image_url('img2.png')%></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</section>
+</div>
+</header>
+
+
+<!-- about  -->
+<div id="about" class="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="about-box">
+          <h2>About us</h2>
+          <p>We can change the way you move things, how you shop and lets you access your city like never before. We're an app that connects you to the nearest delivery partner who can make purchases, pick up items from any store in the city and bring them to you.</p>
+          <a href="Javascript:void(0)">Read more</a>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+        <div class="about-box_img">
+          <figure>
+      <%= image_tag image_url('about.jpg') %>
+      </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end abouts -->
+
+
+<!-- vegetable -->
+<div id="vegetable" class="vegetable">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div  class="titlepage">
+          <h2> Fresh <strong class="llow">vegetable</strong> </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
+        <div class="vegetable_shop">
+          <h3>Best Vegetables Shop</h3>
+          <p>Fresh fruits and vegetables are an important part of a healthy diet. They contain essential vitamins, minerals, fiber and other nutrients that are essential for good health. In fact, research has shown that a healthy diet rich in fruits and vegetables may reduce the risk of cancer and other chronic diseases. </p>
+        </div>
+      </div>
+       <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+        <div class="vegetable_img">
+         <figure><%= image_tag image_url('v1.jpg')%></figure>
+         <span>01</span>
+        </div>
+      </div>
+       <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
+        <div class="vegetable_img margin_top">
+         <figure>
+              <%= image_tag image_url('v2.jpg') %>
+              </figure>
+         <span>02</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end vegetable -->
+
+    <div class="clients_red">
+        <div class="container">
+            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+          <!-- Javascript files-->
+          <script src="js/jquery.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="js/jquery-3.0.0.min.js"></script>
+          <script src="js/plugin.js"></script>
+          <!-- sidebar -->
+          <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="js/custom.js"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+          <script>
+// This example adds a marker to indicate the position of Bondi Beach in Sydney,
+// Australia.
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {
+      lat: 40.645037,
+      lng: -73.880224
+    },
+  });
+
+  var image = 'assets/images/maps-and-flags.png';
+  var beachMarker = new google.maps.Marker({
+    position: {
+      lat: 40.645037,
+      lng: -73.880224
+    },
+    map: map,
+    icon: image
+  });
+}
+</script>
+<%= yield %>
+</body>
+</html>
