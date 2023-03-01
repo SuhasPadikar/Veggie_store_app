@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
+  get 'account/login'
+  get 'gallery/checkout'
+  post 'gallery/search'
+  get 'gallery/search'
+  post 'gallery/checkout'
   get 'gallery/index'
   resources :stores
   get 'admin/login'

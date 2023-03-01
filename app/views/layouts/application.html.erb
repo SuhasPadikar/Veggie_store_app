@@ -58,8 +58,11 @@
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> |<%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
 <% end %>
-<li class="tm-nav-li"><a href="/admin/logout" class="tm-nav-link">Logout</a></li>
-
+<% if session[:admin]%>
+<button><a href="/admin/logout">Admin logout</a></button>
+<% else %>
+<button><a href= "admin/login">Admin login</a></button>
+<% end %>
   <% if notice %>
 <p class="alert alert-success"><%= notice %></p>
 <% end %>

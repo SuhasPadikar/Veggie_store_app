@@ -1590,5 +1590,24 @@ transition: all 0.3s ease-in;
  .copyright a:hover {
      color: #ff7e1d ;
 }
+.center {
+    margin: auto;
+    width:30%;
+    border: 2px solid ;
+    padding: 10px;
+  }
+  .center_hello {
+    margin: auto;
+    width:70%;
+    padding: 10px;
+  }
+  
+  .center_hi {
+    margin: auto;
+    width:35%;
+    padding: 10px;
+  }
+  
+  
 /** end footer **/
 /*--------------------------------------------------------------------- ener page css ---------------------------------------------------------------------*/
